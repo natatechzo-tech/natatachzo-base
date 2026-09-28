@@ -5,20 +5,27 @@
    >>> EDIT THIS BLOCK TO CONFIGURE YOUR CONTACT DETAILS <<<
 ========================================================= */
 
-const CONTACT_CONFIG = {
+const SITE_CONFIG = {
+  brandName: "NATA TECHZO",
+  tagline: "Technology • Projects • Digital Services",
+
   whatsapp: "ADD_WHATSAPP_NUMBER",   // e.g. "919876543210" (country code + number, no + or spaces)
   phone: "ADD_PHONE_NUMBER",         // e.g. "+91 98765 43210"
   email: "ADD_EMAIL",                // e.g. "hello@natatechzo.com"
   location: "ADD_LOCATION",          // e.g. "Tamil Nadu, India"
-  github: "ADD_GITHUB_URL",          // e.g. "https://github.com/yourusername"
-  telegram: "ADD_TELEGRAM_URL",      // e.g. "https://t.me/yourusername"
-  discord: "ADD_DISCORD_URL"         // e.g. "https://discord.gg/yourinvite"
+
+  socials: {
+    github: "ADD_GITHUB_URL",        // e.g. "https://github.com/yourusername"
+    whatsapp: "ADD_WHATSAPP_URL",    // e.g. "https://wa.me/919876543210" (leave as-is to auto-derive from whatsapp above)
+    telegram: "ADD_TELEGRAM_URL",    // e.g. "https://t.me/yourusername"
+    discord: "ADD_DISCORD_URL"       // e.g. "https://discord.gg/yourinvite"
+  }
 };
 
 /* ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-  applyContactConfig();
+  applySiteConfig();
   initNavbarScroll();
   initMobileMenu();
   initActiveNavLink();
@@ -28,24 +35,28 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ---------------------------------------------------------
-   Fill contact info + social links from CONTACT_CONFIG
+   Fill contact info + social links from SITE_CONFIG
 --------------------------------------------------------- */
-function applyContactConfig() {
+function applySiteConfig() {
   const set = (id, value) => {
     const el = document.getElementById(id);
     if (el) el.textContent = value;
   };
 
-  if (!isPlaceholder(CONTACT_CONFIG.whatsapp)) set("infoWhatsapp", CONTACT_CONFIG.whatsapp);
-  if (!isPlaceholder(CONTACT_CONFIG.phone)) set("infoPhone", CONTACT_CONFIG.phone);
-  if (!isPlaceholder(CONTACT_CONFIG.email)) set("infoEmail", CONTACT_CONFIG.email);
-  if (!isPlaceholder(CONTACT_CONFIG.location)) set("infoLocation", CONTACT_CONFIG.location);
+  if (!isPlaceholder(SITE_CONFIG.whatsapp)) set("infoWhatsapp", SITE_CONFIG.whatsapp);
+  if (!isPlaceholder(SITE_CONFIG.phone)) set("infoPhone", SITE_CONFIG.phone);
+  if (!isPlaceholder(SITE_CONFIG.email)) set("infoEmail", SITE_CONFIG.email);
+  if (!isPlaceholder(SITE_CONFIG.location)) set("infoLocation", SITE_CONFIG.location);
+
+  const whatsappUrl = isPlaceholder(SITE_CONFIG.socials.whatsapp)
+    ? buildWhatsappLink()
+    : SITE_CONFIG.socials.whatsapp;
 
   const linkTargets = [
-    ["socialGithub", "footerGithub", CONTACT_CONFIG.github],
-    ["socialWhatsapp", "footerWhatsapp", buildWhatsappLink()],
-    ["socialTelegram", "footerTelegram", CONTACT_CONFIG.telegram],
-    ["socialDiscord", "footerDiscord", CONTACT_CONFIG.discord]
+    ["socialGithub", "footerGithub", SITE_CONFIG.socials.github],
+    ["socialWhatsapp", "footerWhatsapp", whatsappUrl],
+    ["socialTelegram", "footerTelegram", SITE_CONFIG.socials.telegram],
+    ["socialDiscord", "footerDiscord", SITE_CONFIG.socials.discord]
   ];
 
   linkTargets.forEach(([socialId, footerId, url]) => {
@@ -61,8 +72,8 @@ function isPlaceholder(value) {
 }
 
 function buildWhatsappLink(message) {
-  if (isPlaceholder(CONTACT_CONFIG.whatsapp)) return "#";
-  const digits = CONTACT_CONFIG.whatsapp.replace(/[^0-9]/g, "");
+  if (isPlaceholder(SITE_CONFIG.whatsapp)) return "#";
+  const digits = SITE_CONFIG.whatsapp.replace(/[^0-9]/g, "");
   const base = `https://wa.me/${digits}`;
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 }
@@ -244,7 +255,7 @@ function initContactForm() {
   }
 
   function sendViaWhatsapp() {
-    if (isPlaceholder(CONTACT_CONFIG.whatsapp)) {
+    if (isPlaceholder(SITE_CONFIG.whatsapp)) {
       showToast("WhatsApp number not configured yet. Please set it in script.js.", "error");
       return;
     }
@@ -254,14 +265,14 @@ function initContactForm() {
   }
 
   function sendViaEmail() {
-    if (isPlaceholder(CONTACT_CONFIG.email)) {
+    if (isPlaceholder(SITE_CONFIG.email)) {
       showToast("Email address not configured yet. Please set it in script.js.", "error");
       return;
     }
     const values = getFormValues();
     const subject = encodeURIComponent(`Enquiry: ${values.subject}`);
     const body = encodeURIComponent(buildMessage(values));
-    window.location.href = `mailto:${CONTACT_CONFIG.email}?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${SITE_CONFIG.email}?subject=${subject}&body=${body}`;
     showToast("Opening your email app...");
   }
 }
