@@ -25,7 +25,7 @@ nata-techzo/
 ├── README.md               # Documentation & customization guide
 └── assets/
     ├── images/
-    │   ├── logo.svg        # NATA TECHZO brand vector logo
+    │   ├── logo.png        # NATA TECHZO brand logo
     │   └── favicon.svg     # Clean browser tab favicon
     └── projects/
         ├── gps-traders.svg # Browser mockup for GPS Traders (https://gpstraders.in/)
@@ -59,9 +59,8 @@ const SITE_CONFIG = {
   // Social profile links
   socials: {
     github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    instagram: "https://instagram.com",
-    twitter: ""
+    whatsapp: "919876543210",
+    telegram: "https://t.me/yourusername"
   }
 };
 ```

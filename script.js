@@ -25,9 +25,8 @@ const SITE_CONFIG = {
   // Social profile links (leave as "" if not active yet)
   socials: {
     github: "",
-    linkedin: "",
-    instagram: "",
-    twitter: ""
+    whatsapp: "",
+    telegram: ""
   }
 };
 
@@ -90,6 +89,26 @@ function initSiteConfig() {
     if (locationEl) locationEl.textContent = SITE_CONFIG.location;
   } else {
     if (locationEl) locationEl.textContent = "[YOUR LOCATION]";
+  }
+
+  // Footer social links
+  const footerGithub = document.getElementById("footer-github");
+  const footerWhatsapp = document.getElementById("footer-whatsapp");
+  const footerTelegram = document.getElementById("footer-telegram");
+
+  if (footerGithub && SITE_CONFIG.socials.github && SITE_CONFIG.socials.github.trim() !== "") {
+    footerGithub.href = SITE_CONFIG.socials.github;
+  }
+
+  if (footerWhatsapp) {
+    const waNumber = SITE_CONFIG.socials.whatsapp && SITE_CONFIG.socials.whatsapp.trim() !== ""
+      ? SITE_CONFIG.socials.whatsapp.replace(/\D/g, "")
+      : (SITE_CONFIG.whatsapp && SITE_CONFIG.whatsapp.trim() !== "" ? SITE_CONFIG.whatsapp.replace(/\D/g, "") : "");
+    footerWhatsapp.href = waNumber ? `https://wa.me/${waNumber}` : "#contact";
+  }
+
+  if (footerTelegram && SITE_CONFIG.socials.telegram && SITE_CONFIG.socials.telegram.trim() !== "") {
+    footerTelegram.href = SITE_CONFIG.socials.telegram;
   }
 }
 
