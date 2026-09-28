@@ -1,541 +1,1204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nata Techzo | Technology, Projects & Digital Services</title>
-<meta name="description" content="Nata Techzo is an independent technology initiative focused on practical web projects, digital services, internship documentation support and selected professional services." />
-<meta name="theme-color" content="#050914" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- Primary Meta Tags -->
+  <title>NATA TECHZO | Digital Solutions, Web Development &amp; Projects</title>
+  <meta name="title" content="NATA TECHZO | Digital Solutions, Web Development &amp; Projects">
+  <meta name="description" content="NATA TECHZO develops practical digital solutions, websites, web applications and technology projects for businesses, students and organizations.">
+  <meta name="keywords" content="NATA TECHZO, web development, business websites, web applications, student projects, internship support, documentation, practical digital solutions">
+  <meta name="author" content="NATA TECHZO">
+  <meta name="robots" content="index, follow">
 
-<!-- Open Graph -->
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Nata Techzo | Technology, Projects & Digital Services" />
-<meta property="og:description" content="Independent technology initiative focused on practical web projects, digital services, internship documentation support and selected professional services." />
-<meta property="og:image" content="assets/images/logo.png" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://natatechzo.com/">
+  <meta property="og:site_name" content="NATA TECHZO">
+  <meta property="og:title" content="NATA TECHZO | Digital Solutions, Web Development &amp; Projects">
+  <meta property="og:description" content="From ideas to digital solutions. Practical web development, technology projects and digital solutions for businesses, students and organizations.">
+  <meta property="og:image" content="assets/images/logo.svg">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Nata Techzo | Technology, Projects & Digital Services" />
-<meta name="twitter:description" content="Independent technology initiative focused on practical web projects, digital services, internship documentation support and selected professional services." />
-<meta name="twitter:image" content="assets/images/logo.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NATA TECHZO | Digital Solutions, Web Development &amp; Projects">
+  <meta name="twitter:description" content="NATA TECHZO develops practical digital solutions, websites, web applications and technology projects for businesses, students and organizations.">
+  <meta name="twitter:image" content="assets/images/logo.svg">
 
-<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN.vercel.app/" />
-<link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+  <!-- Top Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
 
-<!-- ================= NAVIGATION ================= -->
-<header class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="#home" class="brand" aria-label="Nata Techzo home">
-      <img src="assets/images/logo.png" alt="NATA TECHZO" class="brand-logo-img" width="56" height="56" />
-      <span class="brand-name">NATA TECHZO</span>
-    </a>
+  <!-- ========================================================================
+       HEADER & NAVIGATION
+       ======================================================================== -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="#home" class="brand-link" aria-label="NATA TECHZO Homepage">
+        <img src="assets/images/logo.svg" alt="NATA TECHZO Logo" class="brand-logo-img" width="180" height="38">
+      </a>
 
-    <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
-      <a href="#home" class="nav-link active">Home</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#internship" class="nav-link">Internship</a>
-      <a href="#insurance" class="nav-link">Insurance</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#contact" class="nav-link">Contact</a>
-    </nav>
-
-    <a href="#contact" class="btn btn-primary nav-cta">Let's Connect</a>
-
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#home" class="nav-link">Home</a>
-    <a href="#services" class="nav-link">Services</a>
-    <a href="#projects" class="nav-link">Projects</a>
-    <a href="#internship" class="nav-link">Internship</a>
-    <a href="#insurance" class="nav-link">Insurance</a>
-    <a href="#about" class="nav-link">About</a>
-    <a href="#contact" class="nav-link">Contact</a>
-    <a href="#contact" class="btn btn-primary">Let's Connect</a>
-  </div>
-</header>
-
-<main id="main">
-
-  <!-- ================= HERO ================= -->
-  <section class="hero" id="home">
-    <div class="hero-grid-bg" aria-hidden="true"></div>
-    <div class="hero-scanline" aria-hidden="true"></div>
-    <div class="hero-glow hero-glow-cyan" aria-hidden="true"></div>
-    <div class="hero-glow hero-glow-violet" aria-hidden="true"></div>
-
-    <div class="hero-inner">
-      <div class="hero-text reveal">
-        <span class="badge">TECH &bull; PROJECTS &bull; DIGITAL SERVICES</span>
-        <h1 class="hero-title">
-          Exploring <span class="grad-text">Technology.</span><br />
-          Building Practical <span class="grad-text">Solutions.</span>
-        </h1>
-        <p class="hero-sub">Nata Techzo is an independent technology and project initiative focused on practical digital solutions, web projects, internship support, documentation and selected professional services.</p>
-        <div class="hero-actions">
-          <a href="#about" class="btn btn-primary btn-lg">
-            <span>Explore Nata Techzo</span>
-            <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <!-- Desktop & Mobile Nav Menu -->
+      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#internship" class="nav-link">Internship</a>
+        
+        <!-- Insurance Navigation with Dropdown -->
+        <div class="nav-dropdown">
+          <a href="#insurance" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            Insurance
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </a>
-          <a href="#contact" class="btn btn-outline btn-lg">Let's Connect</a>
-        </div>
-      </div>
-
-      <div class="hero-visual reveal" aria-hidden="true">
-        <div class="orbit-ring ring-1"></div>
-        <div class="orbit-ring ring-2"></div>
-        <div class="orbit-ring ring-3"></div>
-        <div class="orbit-dot dot-1"></div>
-        <div class="orbit-dot dot-2"></div>
-
-        <div class="floating-shape shape-a"></div>
-        <div class="floating-shape shape-b"></div>
-        <div class="floating-shape shape-c"></div>
-        <div class="floating-shape shape-d"></div>
-
-        <div class="hud-card hud-card-1">
-          <span class="hud-dot"></span>
-          <span>SYSTEM ONLINE</span>
-        </div>
-        <div class="hud-card hud-card-2">
-          <span class="hud-dot"></span>
-          <span>PROJECTS ACTIVE</span>
-        </div>
-        <div class="hud-card hud-card-3">
-          <span class="hud-dot"></span>
-          <span>STATUS: BUILDING</span>
-        </div>
-
-        <div class="hero-logo-wrap">
-          <div class="hero-logo-glow"></div>
-          <img src="assets/images/logo.png" alt="NATA TECHZO logo" class="hero-logo" />
-        </div>
-      </div>
-    </div>
-
-    <!-- ============ TRUST / SPEC STRIP ============ -->
-    <div class="trust-strip reveal">
-      <div class="trust-strip-inner">
-        <div class="trust-item">
-          <svg class="trust-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H4z" stroke="currentColor" stroke-width="1.5"/><path d="M2 19h20M9 21h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <span>Web Development</span>
-        </div>
-        <span class="trust-sep" aria-hidden="true"></span>
-        <div class="trust-item">
-          <svg class="trust-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2v6M12 16v6M2 12h6M16 12h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
-          <span>Project Development</span>
-        </div>
-        <span class="trust-sep" aria-hidden="true"></span>
-        <div class="trust-item">
-          <svg class="trust-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" stroke="currentColor" stroke-width="1.5"/></svg>
-          <span>Digital Solutions</span>
-        </div>
-        <span class="trust-sep" aria-hidden="true"></span>
-        <div class="trust-item">
-          <svg class="trust-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8l8-4 8 4-8 4-8-4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M4 8v6l8 4 8-4V8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-          <span>Internship Support</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= SERVICES ================= -->
-  <section class="section section-alt" id="services">
-    <div class="section-inner">
-      <div class="section-head reveal">
-        <span class="eyebrow">Services</span>
-        <h2>What We Work On</h2>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <div class="service-card-line" aria-hidden="true"></div>
-          <span class="service-num">01</span>
-          <h3>Web &amp; Digital Projects</h3>
-          <p>Lightweight, responsive websites and digital experiences built around practical requirements.</p>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-card-line" aria-hidden="true"></div>
-          <span class="service-num">02</span>
-          <h3>Mini Project Development</h3>
-          <p>Project concepts, prototypes and practical technology experiments for academic and learning purposes.</p>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-card-line" aria-hidden="true"></div>
-          <span class="service-num">03</span>
-          <h3>Internship Documentation</h3>
-          <p>Support for internship-related documentation, project presentation materials and structured reports.</p>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-card-line" aria-hidden="true"></div>
-          <span class="service-num">04</span>
-          <h3>Internship Certificate Support</h3>
-          <p>Assistance related to internship documentation and certificate requirements, subject to the applicable organization/institution requirements.</p>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-card-line" aria-hidden="true"></div>
-          <span class="service-num">05</span>
-          <h3>Digital Exploration</h3>
-          <p>Exploring emerging tools, web technologies, automation concepts and practical digital workflows.</p>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-card-line" aria-hidden="true"></div>
-          <span class="service-num">06</span>
-          <h3>Insurance Assistance</h3>
-          <p>Insurance-related assistance through my role as an insurance agent, including life insurance and savings-oriented insurance products.</p>
-        </div>
-      </div>
-
-      <p class="disclaimer reveal">Insurance products are subject to applicable terms, conditions, eligibility and insurer policy. Information provided through this site is for general guidance; policy decisions should be made after reviewing the official policy documents.</p>
-    </div>
-  </section>
-
-  <!-- ================= PROJECTS ================= -->
-  <section class="section" id="projects">
-    <div class="section-inner">
-      <div class="section-head reveal">
-        <span class="eyebrow">Projects &amp; Digital Work</span>
-        <h2>Selected Work</h2>
-      </div>
-
-      <div class="projects-grid">
-        <article class="project-card reveal">
-          <div class="project-visual project-visual-a" aria-hidden="true">
-            <div class="project-visual-grid"></div>
-            <span class="project-mark">GT</span>
-          </div>
-          <div class="project-body">
-            <div class="project-meta">
-              <span class="project-num">01</span>
-              <span class="project-category">Web Project</span>
-            </div>
-            <h3>GPS Traders</h3>
-            <p>Website project for GPS Traders, presenting engineering, construction, supply and completed project information.</p>
-            <a href="https://gpstraders.in/" target="_blank" rel="noopener noreferrer" class="project-link">
-              Visit Website
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="dropdown-menu" role="menu">
+            <a href="#insurance-life" class="dropdown-item" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              Life Insurance
             </a>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-visual project-visual-b" aria-hidden="true">
-            <div class="project-visual-grid"></div>
-            <span class="project-mark">UY</span>
-          </div>
-          <div class="project-body">
-            <div class="project-meta">
-              <span class="project-num">02</span>
-              <span class="project-category">Digital Commerce</span>
-            </div>
-            <h3>Uyirppu</h3>
-            <p>Digital commerce and green-living website focused on plants, gardening products, collections, articles and customer-facing experiences.</p>
-            <a href="https://uyirppu.in/" target="_blank" rel="noopener noreferrer" class="project-link">
-              Visit Website
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <a href="#insurance-health" class="dropdown-item" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              Health Insurance
             </a>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-visual project-visual-c" aria-hidden="true">
-            <div class="project-visual-grid"></div>
-            <img src="assets/images/logo.png" alt="" class="project-mark-logo" />
-          </div>
-          <div class="project-body">
-            <div class="project-meta">
-              <span class="project-num">03</span>
-              <span class="project-category">Technology Initiative</span>
-            </div>
-            <h3>Nata Techzo</h3>
-            <p>Technology initiative and experimental project space.</p>
-            <a href="#services" class="project-link">
-              Explore
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <a href="#insurance-motor" class="dropdown-item" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+              Motor Insurance
             </a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= INTERNSHIP ================= -->
-  <section class="section section-alt" id="internship">
-    <div class="section-inner">
-      <div class="section-head reveal">
-        <span class="eyebrow">Internship Support</span>
-        <h2>From project work to documentation.</h2>
-      </div>
-
-      <div class="process-track">
-        <div class="process-step reveal">
-          <span class="process-num">01</span>
-          <h3>Project / Training</h3>
-        </div>
-        <div class="process-line" aria-hidden="true"></div>
-        <div class="process-step reveal">
-          <span class="process-num">02</span>
-          <h3>Documentation</h3>
-        </div>
-        <div class="process-line" aria-hidden="true"></div>
-        <div class="process-step reveal">
-          <span class="process-num">03</span>
-          <h3>Certificate / Completion Record</h3>
-        </div>
-      </div>
-
-      <p class="section-desc centered reveal">Internship-related support can include project documentation, report preparation, presentation structure and certificate-related documentation.</p>
-
-      <div class="center-cta reveal">
-        <a href="#contact" class="btn btn-primary btn-lg">Discuss Internship Requirements</a>
-      </div>
-
-      <p class="note centered reveal">Requirements and certificate issuance depend on the applicable organization, institution and internship arrangement.</p>
-    </div>
-  </section>
-
-  <!-- ================= INSURANCE ================= -->
-  <section class="section section-insurance" id="insurance">
-    <div class="section-inner">
-      <div class="section-head reveal">
-        <span class="eyebrow eyebrow-insurance">Insurance Services</span>
-        <h2>Life &amp; Savings-Oriented Insurance Assistance</h2>
-        <p class="section-desc">Alongside technology projects, I also work as an insurance agent and can assist with understanding available life insurance and savings-oriented insurance products.</p>
-      </div>
-
-      <div class="insurance-grid">
-        <div class="insurance-card reveal">
-          <h3>Life Insurance</h3>
-          <p>Protection-oriented insurance options based on individual requirements.</p>
-        </div>
-        <div class="insurance-card reveal">
-          <h3>Savings-Oriented Insurance</h3>
-          <p>Insurance products that may combine protection with savings-related features, subject to policy terms.</p>
-        </div>
-        <div class="insurance-card reveal">
-          <h3>Policy Guidance</h3>
-          <p>Help understanding basic policy features, eligibility and documentation before making a decision.</p>
-        </div>
-      </div>
-
-      <div class="center-cta reveal">
-        <a href="#contact" class="btn btn-outline btn-lg">Ask About Insurance</a>
-      </div>
-
-      <p class="disclaimer reveal centered">Insurance products are subject to applicable terms, conditions, eligibility and insurer policy. Information provided through this site is for general guidance and does not guarantee returns, approval or specific benefits; policy decisions should be made after reviewing the official policy documents.</p>
-    </div>
-  </section>
-
-  <!-- ================= ABOUT ================= -->
-  <section class="section" id="about">
-    <div class="section-inner">
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <span class="eyebrow">About</span>
-          <h2>What is Nata Techzo?</h2>
-          <p class="section-desc">Nata Techzo is an independent technology initiative built around experimentation, practical projects and digital services. The focus is on creating useful web experiences, supporting internship documentation and exploring technology through real-world projects.</p>
-
-          <div class="why-grid">
-            <div class="why-card reveal">
-              <h3>Lightweight</h3>
-              <p>Simple technologies and fast-loading experiences.</p>
-            </div>
-            <div class="why-card reveal">
-              <h3>Practical</h3>
-              <p>Focused on real requirements rather than unnecessary complexity.</p>
-            </div>
-            <div class="why-card reveal">
-              <h3>Experimental</h3>
-              <p>A space to explore ideas and technologies.</p>
-            </div>
-            <div class="why-card reveal">
-              <h3>Adaptable</h3>
-              <p>Projects and services evolve based on requirements.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-visual reveal" aria-hidden="true">
-          <div class="feature-track">
-            <div class="feature-line"></div>
-
-            <div class="feature-card">
-              <span class="feature-num">01</span>
-              <h3>Projects</h3>
-              <p>Practical digital and web projects.</p>
-            </div>
-
-            <div class="feature-card">
-              <span class="feature-num">02</span>
-              <h3>Learning</h3>
-              <p>Technology exploration and continuous experimentation.</p>
-            </div>
-
-            <div class="feature-card">
-              <span class="feature-num">03</span>
-              <h3>Services</h3>
-              <p>Documentation, internship support and selected professional services.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CONTACT ================= -->
-  <section class="section section-alt" id="contact">
-    <div class="section-inner">
-      <div class="section-head reveal">
-        <span class="eyebrow">Contact</span>
-        <h2>Let's Build Something Useful.</h2>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info reveal">
-          <div class="info-item">
-            <span class="info-label">WhatsApp</span>
-            <span class="info-value" id="infoWhatsapp">Add your WhatsApp number in script.js</span>
-          </div>
-          <div class="info-item">
-            <span class="info-label">Phone</span>
-            <span class="info-value" id="infoPhone">Add your phone number in script.js</span>
-          </div>
-          <div class="info-item">
-            <span class="info-label">Email</span>
-            <span class="info-value" id="infoEmail">Add your email in script.js</span>
-          </div>
-          <div class="info-item">
-            <span class="info-label">Location</span>
-            <span class="info-value" id="infoLocation">Add your location in script.js</span>
-          </div>
-
-          <div class="social-links" id="socialLinks" aria-label="Social links">
-            <a href="#" id="socialGithub" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12.02c0 5.03 3.26 9.29 7.79 10.8.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.17.69-3.84-1.35-3.84-1.35-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.17-3.05-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.16a10.9 10.9 0 0 1 5.73 0c2.19-1.47 3.15-1.16 3.15-1.16.62 1.58.23 2.75.11 3.04.73.79 1.17 1.81 1.17 3.05 0 4.37-2.67 5.34-5.21 5.62.41.36.77 1.06.77 2.14 0 1.55-.01 2.79-.01 3.17 0 .3.2.66.79.55A10.53 10.53 0 0 0 23.5 12.02C23.5 5.73 18.27.5 12 .5Z"/></svg>
-            </a>
-            <a href="#" id="socialWhatsapp" class="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2 22l5.28-1.39a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.19 8.19 0 0 1-1.26-4.34c0-4.53 3.7-8.22 8.24-8.22 2.2 0 4.27.86 5.83 2.42a8.16 8.16 0 0 1 2.41 5.81c0 4.53-3.7 8.2-8.24 8.2Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.24-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.41 1.02 2.58c.12.17 1.75 2.68 4.25 3.75.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
-            </a>
-            <a href="#" id="socialTelegram" class="social-icon" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M22.05 3.44 2.87 10.9c-1.3.52-1.29 1.24-.24 1.56l4.91 1.53 1.9 5.83c.23.62.12.87.78.87.5 0 .72-.23 1-.5l2.4-2.33 4.99 3.68c.92.51 1.58.25 1.81-.85l3.28-15.46c.33-1.36-.51-1.98-1.65-1.79ZM8.6 14.4l9.34-8.4c.42-.36-.09-.53-.65-.19L6.2 12.6l-4.36-1.36c-.95-.29-.96-.95.2-1.4l17-6.56c.79-.28 1.48.18 1.22 1.4L17.3 19.2c-.18.86-.67 1.07-1.36.66l-3.77-2.78-1.82 1.75c-.2.2-.37.37-.75.37Z"/></svg>
-            </a>
-            <a href="#" id="socialDiscord" class="social-icon" aria-label="Discord" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.32 5.37A18.6 18.6 0 0 0 15.7 4a13 13 0 0 0-.6 1.22 17.4 17.4 0 0 0-5.2 0A13 13 0 0 0 9.3 4a18.5 18.5 0 0 0-4.63 1.38C1.9 9.28 1.2 13.08 1.55 16.83a18.7 18.7 0 0 0 5.64 2.83c.46-.62.86-1.28 1.2-1.98-.66-.25-1.29-.55-1.89-.92.16-.11.31-.23.46-.35a13.3 13.3 0 0 0 11.28 0c.15.12.3.24.46.35-.6.37-1.23.67-1.89.92.34.7.74 1.36 1.2 1.98a18.6 18.6 0 0 0 5.64-2.83c.42-4.35-.72-8.11-3.33-11.46ZM8.68 14.6c-.94 0-1.71-.86-1.71-1.92s.75-1.92 1.71-1.92 1.73.87 1.71 1.92c0 1.06-.75 1.92-1.71 1.92Zm6.65 0c-.94 0-1.71-.86-1.71-1.92s.75-1.92 1.71-1.92 1.73.87 1.71 1.92c0 1.06-.75 1.92-1.71 1.92Z"/></svg>
+            <a href="#insurance-agent" class="dropdown-item" data-service-target="Insurance Assistance" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Talk to an Agent
             </a>
           </div>
         </div>
 
-        <form class="contact-form reveal" id="contactForm" novalidate>
-          <p class="form-note">This is a client-side contact form. Submitting will open WhatsApp or your email app with your message &mdash; no data is sent to any server.</p>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
 
-          <div class="form-row">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" autocomplete="name" required />
-            <span class="form-error" id="err-name"></span>
+        <!-- Mobile Drawer CTA Button -->
+        <a href="#contact" class="btn btn-primary btn-sm mobile-nav-cta" style="display: none;">Let's Talk</a>
+      </nav>
+
+      <!-- Desktop Header CTA -->
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary btn-sm">
+          <span>Let's Talk</span>
+          <svg class="btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         SECTION 1: HERO SECTION
+         ====================================================================== -->
+    <section class="hero" id="home">
+      <!-- Interactive Constellation Canvas -->
+      <canvas id="techCanvas" aria-hidden="true"></canvas>
+
+      <div class="container hero-content-wrapper">
+        <div class="hero-text reveal">
+          <!-- Hero Badge -->
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span>Digital Solutions • Web Development • Projects</span>
           </div>
 
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" autocomplete="email" required />
-            <span class="form-error" id="err-email"></span>
+          <!-- Headline -->
+          <h1 class="hero-headline">
+            From Ideas to <span class="gradient-text">Digital Solutions.</span>
+          </h1>
+
+          <!-- Supporting Text -->
+          <p class="hero-description">
+            NATA TECHZO builds practical digital experiences, websites and technology solutions for businesses, students and organizations.
+          </p>
+
+          <!-- CTAs -->
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <span>Explore Our Projects</span>
+              <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Let's Work Together</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Futuristic Right Visual Stage -->
+        <div class="hero-visual-stage reveal-right delay-2">
+          <!-- Floating Status Chip 1 -->
+          <div class="floating-chip chip-1">
+            <div class="chip-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Modern Web Stack</span>
           </div>
 
-          <div class="form-row">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" required />
-            <span class="form-error" id="err-phone"></span>
+          <!-- Interactive 3D Card Window -->
+          <div class="hero-interactive-card">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="terminal-dot dot-red"></span>
+                <span class="terminal-dot dot-amber"></span>
+                <span class="terminal-dot dot-green"></span>
+              </div>
+              <span class="terminal-title">nata-techzo.config.js</span>
+              <div class="terminal-status-badge">
+                <span class="status-indicator"></span>
+                <span>Active</span>
+              </div>
+            </div>
+
+            <div class="terminal-body">
+              <p><span class="code-comment">// NATA TECHZO Solutions Core</span></p>
+              <p><span class="code-keyword">const</span> <span class="code-variable">nataTechzo</span> = {</p>
+              <p>&nbsp;&nbsp;<span class="code-property">tagline</span>: <span class="code-string">"From Ideas to Digital Solutions."</span>,</p>
+              <p>&nbsp;&nbsp;<span class="code-property">focus</span>: [<span class="code-string">"Web Apps"</span>, <span class="code-string">"Websites"</span>, <span class="code-string">"Projects"</span>],</p>
+              <p>&nbsp;&nbsp;<span class="code-property">approach</span>: <span class="code-string">"Practical &amp; Result-Oriented"</span>,</p>
+              <p>&nbsp;&nbsp;<span class="code-property">isProductionReady</span>: <span class="code-boolean">true</span>,</p>
+              <p>&nbsp;&nbsp;<span class="code-property">deliver</span>: () =&gt; <span class="code-string">"Real-World Solutions"</span></p>
+              <p>};</p>
+            </div>
+
+            <div class="terminal-metrics">
+              <div class="metric-pill">
+                <span class="metric-label">Architecture</span>
+                <span class="metric-val">Modern</span>
+              </div>
+              <div class="metric-pill">
+                <span class="metric-label">Deployment</span>
+                <span class="metric-val">Vercel</span>
+              </div>
+              <div class="metric-pill">
+                <span class="metric-label">Execution</span>
+                <span class="metric-val">Practical</span>
+              </div>
+            </div>
           </div>
 
-          <div class="form-row">
-            <label for="subject">Service / Subject</label>
-            <select id="subject" name="subject" required>
-              <option value="" disabled selected>Select a subject</option>
-              <option value="Web & Digital Projects">Web & Digital Projects</option>
-              <option value="Mini Project Development">Mini Project Development</option>
-              <option value="Internship Documentation">Internship Documentation</option>
-              <option value="Internship Certificate Support">Internship Certificate Support</option>
-              <option value="Digital Exploration">Digital Exploration</option>
-              <option value="Insurance Assistance">Insurance Assistance</option>
-              <option value="Other">Other</option>
-            </select>
-            <span class="form-error" id="err-subject"></span>
+          <!-- Floating Status Chip 2 -->
+          <div class="floating-chip chip-2">
+            <div class="chip-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <span>Responsive By Design</span>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <span class="form-error" id="err-message"></span>
+    <!-- ======================================================================
+         SECTION 2: HERO TRUST STRIP
+         ====================================================================== -->
+    <div class="trust-strip">
+      <div class="container trust-content">
+        <div class="trust-tagline">
+          <svg class="trust-tagline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <span>Built for practical needs. Designed for real-world use.</span>
+        </div>
+        <div class="trust-pillars">
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <span>Web Development</span>
           </div>
-
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary btn-lg" id="sendWhatsapp">Send Enquiry via WhatsApp</button>
-            <button type="button" class="btn btn-outline btn-lg" id="sendEmail">Send via Email</button>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+            <span>Project Development</span>
           </div>
-        </form>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            <span>Digital Solutions</span>
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            <span>Student Support</span>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
 
-</main>
+    <!-- ======================================================================
+         SECTION 3: ABOUT NATA TECHZO
+         ====================================================================== -->
+    <section class="section section-alt" id="about">
+      <div class="grid-overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="about-grid">
+          <div class="reveal">
+            <span class="section-tag">About The Brand</span>
+            <h2 class="section-title">Technology With a Practical Purpose.</h2>
+            <p class="about-intro-text">
+              NATA TECHZO focuses on turning ideas and requirements into practical digital solutions. From business websites and online platforms to student projects and technology-oriented development, our approach is centered on understanding the requirement, building the solution and refining it for real use.
+            </p>
+            <div class="about-tagline-quote">
+              "We prioritize useful implementations over unnecessary complexity."
+            </div>
+          </div>
+          <div class="reveal-right delay-2">
+            <div class="hero-interactive-card" style="max-width: 100%; border-color: rgba(139, 92, 246, 0.3);">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="terminal-dot dot-red"></span>
+                  <span class="terminal-dot dot-amber"></span>
+                  <span class="terminal-dot dot-green"></span>
+                </div>
+                <span class="terminal-title">core-values.json</span>
+              </div>
+              <div class="terminal-body" style="font-size: 0.85rem;">
+                <p><span class="code-keyword">"principles"</span>: [</p>
+                <p>&nbsp;&nbsp;<span class="code-string">"Clear &amp; Transparent Communication"</span>,</p>
+                <p>&nbsp;&nbsp;<span class="code-string">"Practical Problem Solving"</span>,</p>
+                <p>&nbsp;&nbsp;<span class="code-string">"Reliable &amp; Clean Code Architecture"</span>,</p>
+                <p>&nbsp;&nbsp;<span class="code-string">"Real-World Value for Businesses &amp; Students"</span></p>
+                <p>]</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="assets/images/logo.png" alt="NATA TECHZO" class="footer-logo-img" width="44" height="44" />
-      <div>
-        <span class="brand-name">NATA TECHZO</span>
-        <p class="footer-tagline">Technology &bull; Projects &bull; Digital Services</p>
+        <!-- 3 Feature Cards (Understand, Build, Refine) -->
+        <div class="process-trio">
+          <div class="process-card reveal delay-1">
+            <span class="process-step-num">01</span>
+            <h3 class="process-card-title">Understand</h3>
+            <p class="process-card-desc">We begin by understanding the requirement and intended outcome.</p>
+          </div>
+          <div class="process-card reveal delay-2">
+            <span class="process-step-num">02</span>
+            <h3 class="process-card-title">Build</h3>
+            <p class="process-card-desc">We turn the concept into a practical digital solution.</p>
+          </div>
+          <div class="process-card reveal delay-3">
+            <span class="process-step-num">03</span>
+            <h3 class="process-card-title">Refine</h3>
+            <p class="process-card-desc">We test, improve and prepare the solution for actual use.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 4: SERVICES SECTION
+         ====================================================================== -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Services</span>
+          <h2 class="section-title">What We Do</h2>
+          <p class="section-subtitle">Technology solutions designed around practical requirements.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <article class="service-card reveal delay-1">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <span class="service-card-num">01</span>
+            </div>
+            <h3 class="service-title">Web Development</h3>
+            <p class="service-desc">Responsive websites and modern web experiences for businesses, organizations and individuals.</p>
+            <div class="service-footer">
+              <span class="service-tag">HTML • CSS • JS</span>
+            </div>
+          </article>
+
+          <!-- Service 2 -->
+          <article class="service-card reveal delay-2">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <span class="service-card-num">02</span>
+            </div>
+            <h3 class="service-title">Business Websites</h3>
+            <p class="service-desc">Professional websites that help businesses establish a strong digital presence.</p>
+            <div class="service-footer">
+              <span class="service-tag">Brand &amp; Leads</span>
+            </div>
+          </article>
+
+          <!-- Service 3 -->
+          <article class="service-card reveal delay-3">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              </div>
+              <span class="service-card-num">03</span>
+            </div>
+            <h3 class="service-title">Web Applications</h3>
+            <p class="service-desc">Interactive web-based solutions designed around specific workflows and requirements.</p>
+            <div class="service-footer">
+              <span class="service-tag">Custom Logic</span>
+            </div>
+          </article>
+
+          <!-- Service 4 -->
+          <article class="service-card reveal delay-4">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <span class="service-card-num">04</span>
+            </div>
+            <h3 class="service-title">Project Development</h3>
+            <p class="service-desc">Practical technology projects developed around academic, experimental and real-world requirements.</p>
+            <div class="service-footer">
+              <span class="service-tag">Full-Cycle Build</span>
+            </div>
+          </article>
+
+          <!-- Service 5 -->
+          <article class="service-card reveal delay-1">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <span class="service-card-num">05</span>
+            </div>
+            <h3 class="service-title">Student Project Support</h3>
+            <p class="service-desc">Guidance and technical support for mini projects, final-year projects and demonstrations.</p>
+            <div class="service-footer">
+              <span class="service-tag">Academic Guidance</span>
+            </div>
+          </article>
+
+          <!-- Service 6 -->
+          <article class="service-card reveal delay-2">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <span class="service-card-num">06</span>
+            </div>
+            <h3 class="service-title">Internship Support</h3>
+            <p class="service-desc">Practical learning support, project exposure and documentation assistance.</p>
+            <div class="service-footer">
+              <span class="service-tag">Hands-on Learning</span>
+            </div>
+          </article>
+
+          <!-- Service 7 -->
+          <article class="service-card reveal delay-3">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <span class="service-card-num">07</span>
+            </div>
+            <h3 class="service-title">Documentation</h3>
+            <p class="service-desc">Project reports, technical documentation and supporting materials.</p>
+            <div class="service-footer">
+              <span class="service-tag">Reports &amp; Specs</span>
+            </div>
+          </article>
+
+          <!-- Service 8 -->
+          <article class="service-card reveal delay-4">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              </div>
+              <span class="service-card-num">08</span>
+            </div>
+            <h3 class="service-title">Digital Solutions</h3>
+            <p class="service-desc">Customized digital solutions based on individual or business requirements.</p>
+            <div class="service-footer">
+              <span class="service-tag">Tailored Architecture</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 5: FEATURED PROJECTS ("Projects We've Built")
+         ====================================================================== -->
+    <section class="section section-alt" id="projects">
+      <div class="grid-overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Case Studies</span>
+          <h2 class="section-title">Projects We've Built</h2>
+          <p class="section-subtitle">Real websites and digital platforms developed by NATA TECHZO.</p>
+        </div>
+
+        <div class="projects-container">
+          <!-- PROJECT 01: GPS Traders -->
+          <article class="project-card reveal">
+            <div class="browser-window">
+              <div class="browser-bar">
+                <div class="browser-controls">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-amber"></span>
+                  <span class="browser-dot dot-green"></span>
+                </div>
+                <div class="browser-url-pill">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>https://gpstraders.in/</span>
+                </div>
+              </div>
+              <div class="browser-screen">
+                <img src="assets/projects/gps-traders.svg" alt="GPS Traders Website Preview Mockup" loading="lazy" width="800" height="480">
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category">PROJECT 01 • Business Website</span>
+              <h3 class="project-title">GPS Traders</h3>
+              <p class="project-desc">
+                A professional digital presence developed for GPS Traders, presenting their construction, engineering and supply services.
+              </p>
+              <div class="project-meta-pills">
+                <span class="meta-pill">Corporate Showcase</span>
+                <span class="meta-pill">Responsive Design</span>
+                <span class="meta-pill">Lead Generation</span>
+              </div>
+              <div>
+                <a href="https://gpstraders.in/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  <span>Visit Website</span>
+                  <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 02: Uyirppu -->
+          <article class="project-card reverse reveal">
+            <div class="browser-window">
+              <div class="browser-bar">
+                <div class="browser-controls">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-amber"></span>
+                  <span class="browser-dot dot-green"></span>
+                </div>
+                <div class="browser-url-pill">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>https://uyirppu.in/</span>
+                </div>
+              </div>
+              <div class="browser-screen">
+                <img src="assets/projects/uyirppu.svg" alt="Uyirppu Green Living Platform Preview Mockup" loading="lazy" width="800" height="480">
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category">PROJECT 02 • E-Commerce / Green Living Platform</span>
+              <h3 class="project-title">Uyirppu</h3>
+              <p class="project-desc">
+                An online platform developed for Uyirppu, bringing together plants, gardening products, collections and a complete digital shopping experience.
+              </p>
+              <div class="project-meta-pills">
+                <span class="meta-pill">Product Catalog</span>
+                <span class="meta-pill">Green Living</span>
+                <span class="meta-pill">Modern E-Commerce</span>
+              </div>
+              <div>
+                <a href="https://uyirppu.in/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  <span>Visit Website</span>
+                  <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 03: More Projects -->
+          <article class="project-card reveal">
+            <div class="browser-window">
+              <div class="browser-bar">
+                <div class="browser-controls">
+                  <span class="browser-dot dot-red"></span>
+                  <span class="browser-dot dot-amber"></span>
+                  <span class="browser-dot dot-green"></span>
+                </div>
+                <div class="browser-url-pill">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>nata-techzo://pipeline/sprint-next</span>
+                </div>
+              </div>
+              <div class="browser-screen">
+                <img src="assets/projects/upcoming.svg" alt="Active Technology Pipeline Preview" loading="lazy" width="800" height="480">
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category">PROJECT 03 • In Active Development</span>
+              <h3 class="project-title">More Projects</h3>
+              <p class="project-desc">
+                New digital projects and technology solutions are being developed. More work will be showcased here soon.
+              </p>
+              <div class="project-meta-pills">
+                <span class="meta-pill">Next-Gen Solutions</span>
+                <span class="meta-pill">Web Applications</span>
+                <span class="meta-pill">Student Portfolios</span>
+              </div>
+              <div>
+                <a href="#contact" data-service-target="Project Development" class="btn btn-secondary">
+                  <span>Start a Project</span>
+                  <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 6: "FROM IDEA TO DELIVERY" SECTION
+         ====================================================================== -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Methodology</span>
+          <h2 class="section-title">From Idea to Delivery</h2>
+          <p class="section-subtitle">A straightforward, disciplined path from initial requirement to working reality.</p>
+        </div>
+
+        <div class="workflow-track">
+          <!-- Step 1 -->
+          <div class="workflow-node reveal delay-1">
+            <div class="workflow-badge-num">01</div>
+            <h3 class="workflow-node-title">DISCOVER</h3>
+            <p class="workflow-node-desc">Understand the idea and requirement.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="workflow-node reveal delay-2">
+            <div class="workflow-badge-num">02</div>
+            <h3 class="workflow-node-title">PLAN</h3>
+            <p class="workflow-node-desc">Define the structure, technology and approach.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="workflow-node reveal delay-3">
+            <div class="workflow-badge-num">03</div>
+            <h3 class="workflow-node-title">BUILD</h3>
+            <p class="workflow-node-desc">Develop the actual solution.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="workflow-node reveal delay-4">
+            <div class="workflow-badge-num">04</div>
+            <h3 class="workflow-node-title">TEST</h3>
+            <p class="workflow-node-desc">Review functionality, responsiveness and usability.</p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="workflow-node reveal delay-1">
+            <div class="workflow-badge-num">05</div>
+            <h3 class="workflow-node-title">DELIVER</h3>
+            <p class="workflow-node-desc">Prepare the completed solution for use.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 7: INTERNSHIP SECTION
+         ====================================================================== -->
+    <section class="section section-alt" id="internship">
+      <div class="grid-overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Learning &amp; Growth</span>
+          <h2 class="section-title">Learn. Build. Experience.</h2>
+          <p class="section-subtitle">Practical exposure through technology projects, guided development and project-oriented learning.</p>
+        </div>
+
+        <div class="internship-cards-grid">
+          <!-- Card 1 -->
+          <div class="intern-card reveal delay-1">
+            <div class="intern-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="intern-card-title">Web Development</h3>
+            <p class="intern-card-desc">Hands-on frontend and web development exposure using modern HTML, CSS, JavaScript and responsive frameworks.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="intern-card reveal delay-2">
+            <div class="intern-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="intern-card-title">Project Development</h3>
+            <p class="intern-card-desc">Experience working through end-to-end development phases from requirements definition to functional deployment.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="intern-card reveal delay-3">
+            <div class="intern-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <h3 class="intern-card-title">Software Projects</h3>
+            <p class="intern-card-desc">Understanding logic building, backend integration concepts, database schemas and web application architecture.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="intern-card reveal delay-1">
+            <div class="intern-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+            </div>
+            <h3 class="intern-card-title">IoT / Technology Projects</h3>
+            <p class="intern-card-desc">Exposure to connected hardware, sensor workflows, controller interfaces and telemetry dashboards.</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="intern-card reveal delay-2">
+            <div class="intern-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <h3 class="intern-card-title">Documentation</h3>
+            <p class="intern-card-desc">Guidance on drafting clean technical documentation, system architectural diagrams and project summaries.</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="intern-card reveal delay-3">
+            <div class="intern-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+            </div>
+            <h3 class="intern-card-title">Practical Training</h3>
+            <p class="intern-card-desc">Real-world workflow exposure including version control, collaborative development practices and deployment workflows.</p>
+          </div>
+        </div>
+
+        <div style="text-align: center;" class="reveal">
+          <a href="#contact" data-service-target="Internship Support" class="btn btn-primary">
+            <span>Explore Internship</span>
+            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <div class="transparent-note reveal">
+          Internship offerings, duration and documentation are provided based on the specific program and requirements.
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 8: STUDENT PROJECT SECTION
+         ====================================================================== -->
+    <section class="section" id="student-projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Academic &amp; Mini Projects</span>
+          <h2 class="section-title">Have a Project Idea?</h2>
+          <p class="section-subtitle">From an initial concept to a working demonstration, NATA TECHZO provides technical guidance and development support for practical student projects.</p>
+        </div>
+
+        <!-- 3 Stages: Idea -> Development -> Demonstration -->
+        <div class="stages-trio reveal">
+          <div class="stage-card">
+            <div class="stage-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Idea</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Defining problem statements, selecting relevant tech stacks and scoping realistic outcomes.</p>
+          </div>
+
+          <div class="stage-arrow" aria-hidden="true">&rarr;</div>
+
+          <div class="stage-card">
+            <div class="stage-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Development</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Hands-on coding, module integration, error resolution and architectural structuring.</p>
+          </div>
+
+          <div class="stage-arrow" aria-hidden="true">&rarr;</div>
+
+          <div class="stage-card">
+            <div class="stage-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Demonstration</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Ensuring smooth live execution, testing edge cases and preparing presentation assets.</p>
+          </div>
+        </div>
+
+        <!-- 6 Support Categories Wall -->
+        <div class="project-categories-wall reveal">
+          <div class="proj-cat-badge">Web</div>
+          <div class="proj-cat-badge">Software</div>
+          <div class="proj-cat-badge">IoT</div>
+          <div class="proj-cat-badge">Automation</div>
+          <div class="proj-cat-badge">Embedded / Electronics</div>
+          <div class="proj-cat-badge">Data / Analytics</div>
+        </div>
+
+        <div style="text-align: center;" class="reveal">
+          <a href="#contact" data-service-target="Student Project Support" class="btn btn-secondary">
+            <span>Discuss Your Project</span>
+            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 9: INSURANCE SECTION (Distinct Look & Specific Wording)
+         ====================================================================== -->
+    <section class="section insurance-section" id="insurance">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag gold">Advisory &amp; Coverage Assistance</span>
+          <h2 class="section-title">Insurance Solutions</h2>
+          <p class="section-subtitle">Insurance assistance for the things that matter.</p>
+        </div>
+
+        <div class="insurance-grid">
+          <!-- Life Insurance -->
+          <article class="insurance-card reveal delay-1" id="insurance-life">
+            <div class="insurance-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </div>
+            <h3 class="insurance-title">Life Insurance</h3>
+            <p class="insurance-desc">
+              Guidance and assistance regarding term plans, savings plans and family protection policies via LIC Insurance Services and authorized advisor consultation.
+            </p>
+            <span class="insurance-badge">LIC Insurance Services</span>
+          </article>
+
+          <!-- Health Insurance -->
+          <article class="insurance-card reveal delay-2" id="insurance-health">
+            <div class="insurance-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3 class="insurance-title">Health Insurance</h3>
+            <p class="insurance-desc">
+              Assistance with comprehensive medical coverage options, critical illness riders, and hospital care policies for individuals and families.
+            </p>
+            <span class="insurance-badge">Medical &amp; Family Care</span>
+          </article>
+
+          <!-- Motor Insurance -->
+          <article class="insurance-card reveal delay-3" id="insurance-motor">
+            <div class="insurance-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+            </div>
+            <h3 class="insurance-title">Motor Insurance</h3>
+            <p class="insurance-desc">
+              Assistance with two-wheeler and four-wheeler vehicle policies, third-party liability coverage, and own-damage renewals.
+            </p>
+            <span class="insurance-badge">Vehicle Protection</span>
+          </article>
+
+          <!-- Other Insurance Assistance -->
+          <article class="insurance-card reveal delay-4" id="insurance-other">
+            <div class="insurance-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="insurance-title">Other Insurance Assistance</h3>
+            <p class="insurance-desc">
+              Dedicated consultation for policy renewals, claim submission guidance, documentation review and custom risk protection advisory.
+            </p>
+            <span class="insurance-badge">Insurance Agent Advisory</span>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 32px;" class="reveal" id="insurance-agent">
+          <a href="#contact" data-service-target="Insurance Assistance" class="btn btn-gold">
+            <span>Talk to an Insurance Agent</span>
+            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+        </div>
+
+        <div class="insurance-disclaimer reveal">
+          Insurance products, benefits, terms, conditions and eligibility are subject to the applicable policy documents and insurer guidelines.
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 10: WHY WORK WITH US
+         ====================================================================== -->
+    <section class="section section-alt" id="why-us">
+      <div class="grid-overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Value &amp; Philosophy</span>
+          <h2 class="section-title">Why Work With Us?</h2>
+          <p class="section-subtitle">Real-world execution grounded in clarity, technical capability and honesty.</p>
+        </div>
+
+        <div class="why-grid">
+          <!-- Card 1 -->
+          <div class="why-card reveal delay-1">
+            <div class="why-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="why-title">Practical Approach</h3>
+            <p class="why-desc">Solutions are developed around actual requirements rather than unnecessary complexity.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="why-card reveal delay-2">
+            <div class="why-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3 class="why-title">Modern Technology</h3>
+            <p class="why-desc">Use modern web and digital development approaches where appropriate.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="why-card reveal delay-3">
+            <div class="why-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 class="why-title">Clear Communication</h3>
+            <p class="why-desc">Keep requirements, progress and deliverables easy to understand.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="why-card reveal delay-4">
+            <div class="why-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+            </div>
+            <h3 class="why-title">Project-Focused</h3>
+            <p class="why-desc">Focus on building useful, demonstrable and maintainable solutions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 11: TECHNOLOGIES WE WORK WITH
+         ====================================================================== -->
+    <section class="section" id="technologies">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Development Stack</span>
+          <h2 class="section-title">Technologies We Work With</h2>
+          <p class="section-subtitle">Reliable, modern languages, platforms and tools used for implementation.</p>
+        </div>
+
+        <div class="tech-wall">
+          <div class="tech-item reveal delay-1">
+            <svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3h16l-1.5 17-6.5 2-6.5-2L4 3z"/><path d="M7 7h10l-.5 5H8l.3 3 3.7 1 3.7-1 .3-3"/></svg>
+            <span class="tech-name">HTML5</span>
+          </div>
+
+          <div class="tech-item reveal delay-2">
+            <svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3h16l-1.5 17-6.5 2-6.5-2L4 3z"/><path d="M8 8h8l-1 9-3 1-3-1-.5-4"/></svg>
+            <span class="tech-name">CSS3</span>
+          </div>
+
+          <div class="tech-item reveal delay-3">
+            <svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M16 8v5a3 3 0 0 1-3 3h-1"/><path d="M8 12a2 2 0 0 0 2 2h1a2 2 0 0 0 0-4h-1a2 2 0 0 0-2 2z"/></svg>
+            <span class="tech-name">JavaScript</span>
+          </div>
+
+          <div class="tech-item reveal delay-4">
+            <svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C6.48 2 6 4.5 6 6.5V9h6V6.5h3v4.5H9v2h9c2 0 3-1.5 3-4s-.5-7-9-7z"/><path d="M12 22c5.52 0 6-2.5 6-4.5V15h-6v2.5H9V13h6v-2H6c-2 0-3 1.5-3 4s.5 7 9 7z"/></svg>
+            <span class="tech-name">Python</span>
+          </div>
+
+          <div class="tech-item reveal delay-1">
+            <svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="10" ry="7"/><path d="M8 10v4"/><path d="M12 9v5"/><path d="M16 10v4"/></svg>
+            <span class="tech-name">PHP</span>
+          </div>
+
+          <div class="tech-item reveal delay-2">
+            <svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            <span class="tech-name">MySQL</span>
+          </div>
+
+          <div class="tech-item reveal delay-3">
+            <svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M3.5 12h17"/><path d="M12 3.5a15.3 15.3 0 0 1 4 8.5 15.3 15.3 0 0 1-4 8.5 15.3 15.3 0 0 1-4-8.5 15.3 15.3 0 0 1 4-8.5z"/></svg>
+            <span class="tech-name">WordPress</span>
+          </div>
+
+          <div class="tech-item reveal delay-4">
+            <svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><circle cx="6" cy="18" r="3"/><line x1="6" y1="9" x2="6" y2="15"/><path d="M9 18h6"/></svg>
+            <span class="tech-name">Git</span>
+          </div>
+
+          <div class="tech-item reveal delay-1">
+            <svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <span class="tech-name">GitHub</span>
+          </div>
+
+          <div class="tech-item reveal delay-2">
+            <svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m24 22.525-12-21.05-12 21.05z"/></svg>
+            <span class="tech-name">Vercel</span>
+          </div>
+
+          <div class="tech-item reveal delay-3">
+            <svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+            <span class="tech-name">IoT</span>
+          </div>
+
+          <div class="tech-item reveal delay-4">
+            <svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
+            <span class="tech-name">REST APIs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 12: CALL TO ACTION BANNER
+         ====================================================================== -->
+    <section class="section" style="padding-top: 40px; padding-bottom: 40px;">
+      <div class="container">
+        <div class="cta-banner-wrapper reveal">
+          <h2 class="cta-banner-title">Have an Idea? Let's Build It.</h2>
+          <p class="cta-banner-desc">Tell us what you have in mind and let's explore a practical digital solution.</p>
+          <div class="cta-banner-actions">
+            <a href="#contact" data-service-target="Web Development" class="btn btn-primary">
+              <span>Start a Project</span>
+              <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Contact Us</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 13: CONTACT SECTION
+         ====================================================================== -->
+    <section class="section section-alt" id="contact">
+      <div class="grid-overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Get in Touch</span>
+          <h2 class="section-title">Let's Talk</h2>
+          <p class="section-subtitle">Have a project, internship requirement, website idea or insurance enquiry? Get in touch.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Column: Contact Channels Cards -->
+          <div class="contact-channels reveal">
+            <!-- WhatsApp -->
+            <a id="link-whatsapp" href="#contact" target="_blank" rel="noopener noreferrer" class="contact-channel-card">
+              <div class="channel-icon whatsapp">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </div>
+              <div class="channel-content">
+                <h4>WhatsApp</h4>
+                <p id="config-whatsapp">[YOUR WHATSAPP NUMBER]</p>
+              </div>
+            </a>
+
+            <!-- Phone -->
+            <a id="link-phone" href="#contact" class="contact-channel-card">
+              <div class="channel-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="channel-content">
+                <h4>Phone</h4>
+                <p id="config-phone">[YOUR PHONE NUMBER]</p>
+              </div>
+            </a>
+
+            <!-- Email -->
+            <a id="link-email" href="#contact" class="contact-channel-card">
+              <div class="channel-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div class="channel-content">
+                <h4>Email</h4>
+                <p id="config-email">[YOUR EMAIL ADDRESS]</p>
+              </div>
+            </a>
+
+            <!-- Location -->
+            <div class="contact-channel-card">
+              <div class="channel-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="channel-content">
+                <h4>Location</h4>
+                <p id="config-location">[YOUR LOCATION]</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Form Card -->
+          <div class="contact-form-card reveal-right delay-2">
+            <form id="contactForm" novalidate>
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="form-name" class="form-label">Your Name *</label>
+                  <input type="text" id="form-name" class="form-input" placeholder="e.g. Alex Sharma" required>
+                </div>
+                <div class="form-group">
+                  <label for="form-phone" class="form-label">Phone Number</label>
+                  <input type="tel" id="form-phone" class="form-input" placeholder="+91 ...">
+                </div>
+              </div>
+
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="form-email" class="form-label">Email Address</label>
+                  <input type="email" id="form-email" class="form-input" placeholder="name@domain.com">
+                </div>
+                <div class="form-group">
+                  <label for="form-service" class="form-label">Service Area *</label>
+                  <select id="form-service" class="form-select">
+                    <option value="Web Development">Web Development</option>
+                    <option value="Business Website">Business Website</option>
+                    <option value="Web Applications">Web Applications</option>
+                    <option value="Project Development">Project Development</option>
+                    <option value="Student Project Support">Student Project Support</option>
+                    <option value="Internship Support">Internship Support</option>
+                    <option value="Insurance Assistance">Insurance Assistance</option>
+                    <option value="Documentation">Documentation &amp; Reports</option>
+                    <option value="Other">Other Digital Solution</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">Describe Your Requirement *</label>
+                <textarea id="form-message" class="form-textarea" placeholder="Tell us about your project, idea, timeline or questions..." required></textarea>
+              </div>
+
+              <div class="form-actions-bar">
+                <button type="button" id="btnSendWhatsApp" class="btn btn-primary" title="Format and send directly via WhatsApp">
+                  <span>Send via WhatsApp</span>
+                  <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </button>
+
+                <button type="button" id="btnSendEmail" class="btn btn-secondary" title="Open mail client with prefilled details">
+                  <span>Send via Email</span>
+                  <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </button>
+              </div>
+
+              <div id="formAlert" class="form-alert" role="alert" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <a href="#home" aria-label="NATA TECHZO Homepage">
+            <img src="assets/images/logo.svg" alt="NATA TECHZO" width="180" height="38">
+          </a>
+          <p class="footer-tagline">
+            From Ideas to Digital Solutions. Practical technology solutions and web experiences designed for real-world impact.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 1: Services -->
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-link-list">
+            <li><a href="#services" class="footer-link">Web Development</a></li>
+            <li><a href="#services" class="footer-link">Business Websites</a></li>
+            <li><a href="#services" class="footer-link">Web Applications</a></li>
+            <li><a href="#services" class="footer-link">Project Development</a></li>
+            <li><a href="#services" class="footer-link">Documentation</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Projects -->
+        <div>
+          <h4 class="footer-col-title">Projects</h4>
+          <ul class="footer-link-list">
+            <li><a href="https://gpstraders.in/" target="_blank" rel="noopener noreferrer" class="footer-link">GPS Traders</a></li>
+            <li><a href="https://uyirppu.in/" target="_blank" rel="noopener noreferrer" class="footer-link">Uyirppu</a></li>
+            <li><a href="#projects" class="footer-link">Upcoming Builds</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Internship &amp; Students -->
+        <div>
+          <h4 class="footer-col-title">Internship</h4>
+          <ul class="footer-link-list">
+            <li><a href="#internship" class="footer-link">Learning Tracks</a></li>
+            <li><a href="#internship" class="footer-link">Hands-on Projects</a></li>
+            <li><a href="#student-projects" class="footer-link">Student Project Support</a></li>
+            <li><a href="#student-projects" class="footer-link">Demonstration Prep</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Insurance -->
+        <div>
+          <h4 class="footer-col-title">Insurance</h4>
+          <ul class="footer-link-list">
+            <li><a href="#insurance-life" class="footer-link">Life Insurance</a></li>
+            <li><a href="#insurance-health" class="footer-link">Health Insurance</a></li>
+            <li><a href="#insurance-motor" class="footer-link">Motor Insurance</a></li>
+            <li><a href="#insurance-agent" class="footer-link">Talk to an Agent</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 NATA TECHZO. All rights reserved.</p>
+        <a href="#home" class="back-to-top">
+          <span>Back to Top</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+        </a>
       </div>
     </div>
+  </footer>
 
-    <nav class="footer-links" aria-label="Footer navigation">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#internship">Internship</a>
-      <a href="#insurance">Insurance</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <!-- Floating Back to Top Button -->
+  <button id="floating-back-to-top" aria-label="Scroll back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
 
-    <div class="footer-social" id="footerSocial">
-      <a href="#" id="footerGithub" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
-      <a href="#" id="footerWhatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WhatsApp</a>
-      <a href="#" id="footerTelegram" target="_blank" rel="noopener noreferrer" aria-label="Telegram">Telegram</a>
-      <a href="#" id="footerDiscord" target="_blank" rel="noopener noreferrer" aria-label="Discord">Discord</a>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>&copy; 2026 Nata Techzo. All rights reserved. &mdash; Independent technology initiative.</p>
-    <a href="#insurance" class="footer-disclaimer-link">Insurance disclaimer</a>
-  </div>
-</footer>
-
-<button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
-
-<div class="toast-container" id="toastContainer" aria-live="polite"></div>
-
-<script src="script.js"></script>
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>

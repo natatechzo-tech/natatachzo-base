@@ -1,297 +1,561 @@
-/* =========================================================
-   NATA TECHZO — script.js
-   Vanilla JavaScript, no dependencies.
-
-   >>> EDIT THIS BLOCK TO CONFIGURE YOUR CONTACT DETAILS <<<
-========================================================= */
-
+/**
+ * ==============================================================================
+ * NATA TECHZO - WEBSITE CONFIGURATION
+ * ==============================================================================
+ * Easily update the contact information, brand details, and social links below.
+ * Non-programmers can edit the values inside the quotes ("").
+ * If left empty, clean placeholder labels are displayed automatically.
+ */
 const SITE_CONFIG = {
   brandName: "NATA TECHZO",
-  tagline: "Technology • Projects • Digital Services",
+  tagline: "From Ideas to Digital Solutions.",
+  
+  // Enter your WhatsApp number in international format without '+' or spaces (e.g. "919876543210")
+  whatsapp: "", 
 
-  whatsapp: "ADD_WHATSAPP_NUMBER",   // e.g. "919876543210" (country code + number, no + or spaces)
-  phone: "ADD_PHONE_NUMBER",         // e.g. "+91 98765 43210"
-  email: "ADD_EMAIL",                // e.g. "hello@natatechzo.com"
-  location: "ADD_LOCATION",          // e.g. "Tamil Nadu, India"
+  // Enter your phone number formatted for display (e.g. "+91 98765 43210")
+  phone: "",    
 
+  // Enter your contact email address (e.g. "contact@natatechzo.com")
+  email: "",    
+
+  // Enter your physical or operating location (e.g. "Tamil Nadu, India")
+  location: "", 
+
+  // Social profile links (leave as "" if not active yet)
   socials: {
-    github: "ADD_GITHUB_URL",        // e.g. "https://github.com/yourusername"
-    whatsapp: "ADD_WHATSAPP_URL",    // e.g. "https://wa.me/919876543210" (leave as-is to auto-derive from whatsapp above)
-    telegram: "ADD_TELEGRAM_URL",    // e.g. "https://t.me/yourusername"
-    discord: "ADD_DISCORD_URL"       // e.g. "https://discord.gg/yourinvite"
+    github: "",
+    linkedin: "",
+    instagram: "",
+    twitter: ""
   }
 };
 
-/* ========================================================= */
-
+/* --------------------------------------------------------------------------
+   DOM INITIALIZATION
+   -------------------------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
-  applySiteConfig();
-  initNavbarScroll();
-  initMobileMenu();
-  initActiveNavLink();
-  initRevealOnScroll();
-  initBackToTop();
+  initSiteConfig();
+  initHeaderAndNav();
+  initHeroCanvas();
+  initHero3DTilt();
+  initScrollAnimations();
   initContactForm();
+  initQuickCTAs();
+  initBackToTop();
 });
 
-/* ---------------------------------------------------------
-   Fill contact info + social links from SITE_CONFIG
---------------------------------------------------------- */
-function applySiteConfig() {
-  const set = (id, value) => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = value;
-  };
+/* --------------------------------------------------------------------------
+   1. BIND CONFIGURATION TO UI
+   -------------------------------------------------------------------------- */
+function initSiteConfig() {
+  const whatsappEl = document.getElementById("config-whatsapp");
+  const phoneEl = document.getElementById("config-phone");
+  const emailEl = document.getElementById("config-email");
+  const locationEl = document.getElementById("config-location");
 
-  if (!isPlaceholder(SITE_CONFIG.whatsapp)) set("infoWhatsapp", SITE_CONFIG.whatsapp);
-  if (!isPlaceholder(SITE_CONFIG.phone)) set("infoPhone", SITE_CONFIG.phone);
-  if (!isPlaceholder(SITE_CONFIG.email)) set("infoEmail", SITE_CONFIG.email);
-  if (!isPlaceholder(SITE_CONFIG.location)) set("infoLocation", SITE_CONFIG.location);
+  const whatsappLink = document.getElementById("link-whatsapp");
+  const phoneLink = document.getElementById("link-phone");
+  const emailLink = document.getElementById("link-email");
 
-  const whatsappUrl = isPlaceholder(SITE_CONFIG.socials.whatsapp)
-    ? buildWhatsappLink()
-    : SITE_CONFIG.socials.whatsapp;
+  // WhatsApp
+  if (SITE_CONFIG.whatsapp && SITE_CONFIG.whatsapp.trim() !== "") {
+    if (whatsappEl) whatsappEl.textContent = "+" + SITE_CONFIG.whatsapp.replace(/\D/g, "");
+    if (whatsappLink) whatsappLink.href = `https://wa.me/${SITE_CONFIG.whatsapp.replace(/\D/g, "")}`;
+  } else {
+    if (whatsappEl) whatsappEl.textContent = "[YOUR WHATSAPP NUMBER]";
+    if (whatsappLink) whatsappLink.href = "#contact";
+  }
 
-  const linkTargets = [
-    ["socialGithub", "footerGithub", SITE_CONFIG.socials.github],
-    ["socialWhatsapp", "footerWhatsapp", whatsappUrl],
-    ["socialTelegram", "footerTelegram", SITE_CONFIG.socials.telegram],
-    ["socialDiscord", "footerDiscord", SITE_CONFIG.socials.discord]
-  ];
+  // Phone
+  if (SITE_CONFIG.phone && SITE_CONFIG.phone.trim() !== "") {
+    if (phoneEl) phoneEl.textContent = SITE_CONFIG.phone;
+    if (phoneLink) phoneLink.href = `tel:${SITE_CONFIG.phone.replace(/\s+/g, "")}`;
+  } else {
+    if (phoneEl) phoneEl.textContent = "[YOUR PHONE NUMBER]";
+    if (phoneLink) phoneLink.href = "#contact";
+  }
 
-  linkTargets.forEach(([socialId, footerId, url]) => {
-    [socialId, footerId].forEach((id) => {
-      const el = document.getElementById(id);
-      if (el && url && !isPlaceholder(url)) el.href = url;
+  // Email
+  if (SITE_CONFIG.email && SITE_CONFIG.email.trim() !== "") {
+    if (emailEl) emailEl.textContent = SITE_CONFIG.email;
+    if (emailLink) emailLink.href = `mailto:${SITE_CONFIG.email}`;
+  } else {
+    if (emailEl) emailEl.textContent = "[YOUR EMAIL ADDRESS]";
+    if (emailLink) emailLink.href = "#contact";
+  }
+
+  // Location
+  if (SITE_CONFIG.location && SITE_CONFIG.location.trim() !== "") {
+    if (locationEl) locationEl.textContent = SITE_CONFIG.location;
+  } else {
+    if (locationEl) locationEl.textContent = "[YOUR LOCATION]";
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. STICKY NAVBAR, MOBILE MENU & SCROLLSPY
+   -------------------------------------------------------------------------- */
+function initHeaderAndNav() {
+  const header = document.querySelector(".header");
+  const mobileToggle = document.getElementById("mobileToggle");
+  const navMenu = document.getElementById("navMenu");
+  const navLinks = document.querySelectorAll(".nav-link:not(.dropdown-toggle)");
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+  const scrollProgressBar = document.getElementById("scroll-progress");
+
+  // Sticky header & Scroll Progress Bar
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    if (scrollY > 40) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+
+    // Progress Bar
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (totalHeight > 0 && scrollProgressBar) {
+      const progressPercent = (scrollY / totalHeight) * 100;
+      scrollProgressBar.style.width = `${progressPercent}%`;
+    }
+
+    updateScrollSpy();
+  }, { passive: true });
+
+  // Mobile menu toggle
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("open");
+      mobileToggle.classList.toggle("active");
+      mobileToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
-  });
-}
 
-function isPlaceholder(value) {
-  return !value || value.startsWith("ADD_");
-}
-
-function buildWhatsappLink(message) {
-  if (isPlaceholder(SITE_CONFIG.whatsapp)) return "#";
-  const digits = SITE_CONFIG.whatsapp.replace(/[^0-9]/g, "");
-  const base = `https://wa.me/${digits}`;
-  return message ? `${base}?text=${encodeURIComponent(message)}` : base;
-}
-
-/* ---------------------------------------------------------
-   Navbar scroll effect
---------------------------------------------------------- */
-function initNavbarScroll() {
-  const navbar = document.getElementById("navbar");
-  if (!navbar) return;
-
-  const onScroll = () => {
-    navbar.classList.toggle("scrolled", window.scrollY > 12);
-  };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-}
-
-/* ---------------------------------------------------------
-   Mobile hamburger menu
---------------------------------------------------------- */
-function initMobileMenu() {
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobileMenu");
-  if (!hamburger || !mobileMenu) return;
-
-  const closeMenu = () => {
-    hamburger.classList.remove("open");
-    mobileMenu.classList.remove("open");
-    hamburger.setAttribute("aria-expanded", "false");
-  };
-
-  hamburger.addEventListener("click", () => {
-    const isOpen = mobileMenu.classList.toggle("open");
-    hamburger.classList.toggle("open", isOpen);
-    hamburger.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  mobileMenu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-}
-
-/* ---------------------------------------------------------
-   Active nav link on scroll
---------------------------------------------------------- */
-function initActiveNavLink() {
-  const sections = document.querySelectorAll("main section[id], .hero[id]");
-  const navLinks = document.querySelectorAll(".nav-link");
-  if (!sections.length || !navLinks.length) return;
-
-  const setActive = (id) => {
-    navLinks.forEach((link) => {
-      link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
-    });
-  };
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) setActive(entry.target.id);
+    // Close mobile menu on clicking any navigation link
+    document.querySelectorAll(".nav-link, .dropdown-item").forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 900) {
+          navMenu.classList.remove("open");
+          mobileToggle.classList.remove("active");
+          mobileToggle.setAttribute("aria-expanded", "false");
+        }
       });
-    },
-    { rootMargin: "-45% 0px -50% 0px" }
-  );
+    });
 
-  sections.forEach((section) => observer.observe(section));
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navMenu.classList.contains("open")) {
+        navMenu.classList.remove("open");
+        mobileToggle.classList.remove("active");
+        mobileToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Mobile dropdown toggle
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener("click", (e) => {
+        if (window.innerWidth <= 900) {
+          e.preventDefault();
+          const parent = toggle.closest(".nav-dropdown");
+          if (parent) {
+            parent.classList.toggle("mobile-open");
+          }
+        }
+      });
+    });
+  }
+
+  // Smooth scroll with offset & insurance card highlighting
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+      const targetId = this.getAttribute("href");
+      if (targetId === "#") return;
+
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: "smooth" });
+
+        // If clicking an insurance card anchor, highlight the card
+        if (targetId.startsWith("#insurance-")) {
+          setTimeout(() => {
+            targetEl.classList.add("highlighted");
+            setTimeout(() => targetEl.classList.remove("highlighted"), 2000);
+          }, 400);
+        }
+      }
+    });
+  });
 }
 
-/* ---------------------------------------------------------
-   Reveal-on-scroll animations
---------------------------------------------------------- */
-function initRevealOnScroll() {
-  const items = document.querySelectorAll(".reveal");
-  if (!items.length) return;
+// Active link indicator on scroll (Scrollspy)
+function updateScrollSpy() {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const scrollPos = window.scrollY + 160;
 
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (prefersReducedMotion) {
-    items.forEach((item) => item.classList.add("visible"));
+  sections.forEach(section => {
+    const top = section.offsetTop;
+    const height = section.offsetHeight;
+    const id = section.getAttribute("id");
+
+    if (scrollPos >= top && scrollPos < top + height) {
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${id}`) {
+          link.classList.add("active");
+        }
+      });
+    }
+  });
+}
+
+/* --------------------------------------------------------------------------
+   3. HERO PARTICLES / CONSTELLATION CANVAS
+   -------------------------------------------------------------------------- */
+function initHeroCanvas() {
+  const canvas = document.getElementById("techCanvas");
+  if (!canvas) return;
+
+  // Check prefers-reduced-motion
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    canvas.style.display = "none";
     return;
   }
 
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          obs.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
+  const ctx = canvas.getContext("2d");
+  let width, height;
+  let particles = [];
+  const particleCount = 42;
+  const maxDistance = 120;
 
-  items.forEach((item) => observer.observe(item));
+  let mouse = { x: null, y: null, radius: 140 };
+
+  function resize() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = canvas.parentElement.offsetHeight || window.innerHeight;
+  }
+
+  resize();
+  window.addEventListener("resize", resize);
+
+  window.addEventListener("mousemove", (e) => {
+    const rect = canvas.getBoundingClientRect();
+    if (e.clientY <= rect.bottom) {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY - rect.top;
+    } else {
+      mouse.x = null;
+      mouse.y = null;
+    }
+  });
+
+  window.addEventListener("mouseleave", () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
+  // Particle Class
+  class Particle {
+    constructor() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.vx = (Math.random() - 0.5) * 0.5;
+      this.vy = (Math.random() - 0.5) * 0.5;
+      this.radius = Math.random() * 2 + 1;
+      this.color = Math.random() > 0.5 ? "rgba(56, 189, 248, " : "rgba(139, 92, 246, ";
+      this.alpha = Math.random() * 0.5 + 0.2;
+    }
+
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+
+      if (this.x < 0 || this.x > width) this.vx *= -1;
+      if (this.y < 0 || this.y > height) this.vy *= -1;
+
+      // Mouse repulsion/interaction
+      if (mouse.x !== null && mouse.y !== null) {
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < mouse.radius) {
+          const force = (mouse.radius - dist) / mouse.radius;
+          this.x -= (dx / dist) * force * 1.5;
+          this.y -= (dy / dist) * force * 1.5;
+        }
+      }
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `${this.color}${this.alpha})`;
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+  }
+
+  let animationFrameId;
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+
+    for (let i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].draw();
+
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < maxDistance) {
+          const alpha = (1 - dist / maxDistance) * 0.18;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+
+    animationFrameId = requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  // Pause canvas when out of view
+  const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (!animationFrameId) animate();
+      } else {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+      }
+    });
+  });
+
+  const heroSection = document.getElementById("home");
+  if (heroSection) heroObserver.observe(heroSection);
 }
 
-/* ---------------------------------------------------------
-   Back-to-top button
---------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   4. 3D TILT EFFECT ON HERO CARD
+   -------------------------------------------------------------------------- */
+function initHero3DTilt() {
+  const card = document.querySelector(".hero-interactive-card");
+  if (!card) return;
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -10;
+    const rotateY = ((x - centerX) / centerX) * 10;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+  });
+}
+
+/* --------------------------------------------------------------------------
+   5. INTERSECTION OBSERVER SCROLL REVEALS
+   -------------------------------------------------------------------------- */
+function initScrollAnimations() {
+  const revealElements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+  if (!revealElements.length) return;
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    revealElements.forEach(el => el.classList.add("active"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: "0px 0px -40px 0px"
+  });
+
+  revealElements.forEach(el => observer.observe(el));
+}
+
+/* --------------------------------------------------------------------------
+   6. QUICK CTAs & SERVICE PRE-SELECTION
+   -------------------------------------------------------------------------- */
+function initQuickCTAs() {
+  const ctaLinks = document.querySelectorAll("[data-service-target]");
+  const serviceSelect = document.getElementById("form-service");
+
+  ctaLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      const targetService = link.getAttribute("data-service-target");
+      if (serviceSelect && targetService) {
+        serviceSelect.value = targetService;
+      }
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   7. CONTACT FORM LOGIC (WhatsApp & Email Fallback)
+   -------------------------------------------------------------------------- */
+function initContactForm() {
+  const form = document.getElementById("contactForm");
+  const alertBox = document.getElementById("formAlert");
+  const sendWhatsAppBtn = document.getElementById("btnSendWhatsApp");
+  const sendEmailBtn = document.getElementById("btnSendEmail");
+
+  if (!form) return;
+
+  function getFormData() {
+    const name = document.getElementById("form-name").value.trim();
+    const email = document.getElementById("form-email").value.trim();
+    const phone = document.getElementById("form-phone").value.trim();
+    const service = document.getElementById("form-service").value;
+    const message = document.getElementById("form-message").value.trim();
+
+    return { name, email, phone, service, message };
+  }
+
+  function validate(data) {
+    if (!data.name) {
+      showAlert("Please enter your name.", "error");
+      return false;
+    }
+    if (!data.email && !data.phone) {
+      showAlert("Please provide either your Email or Phone number so we can reach you.", "error");
+      return false;
+    }
+    if (!data.message) {
+      showAlert("Please enter a short message describing your requirement.", "error");
+      return false;
+    }
+    return true;
+  }
+
+  function showAlert(msg, type) {
+    if (!alertBox) return;
+    alertBox.textContent = msg;
+    alertBox.className = `form-alert ${type}`;
+    alertBox.style.display = "block";
+    setTimeout(() => {
+      if (type === "success") {
+        alertBox.style.display = "none";
+      }
+    }, 6000);
+  }
+
+  // Handle Send via WhatsApp
+  if (sendWhatsAppBtn) {
+    sendWhatsAppBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const data = getFormData();
+      if (!validate(data)) return;
+
+      const targetNumber = (SITE_CONFIG.whatsapp && SITE_CONFIG.whatsapp.trim() !== "") 
+        ? SITE_CONFIG.whatsapp.replace(/\D/g, "") 
+        : "";
+
+      const formattedText = `*Enquiry for NATA TECHZO*\n` +
+        `------------------------\n` +
+        `*Name:* ${data.name}\n` +
+        `*Email:* ${data.email || 'Not provided'}\n` +
+        `*Phone:* ${data.phone || 'Not provided'}\n` +
+        `*Service:* ${data.service}\n` +
+        `*Message:* ${data.message}`;
+
+      const encodedText = encodeURIComponent(formattedText);
+      const waUrl = targetNumber 
+        ? `https://wa.me/${targetNumber}?text=${encodedText}`
+        : `https://api.whatsapp.com/send?text=${encodedText}`;
+
+      window.open(waUrl, "_blank", "noopener,noreferrer");
+      showAlert("Opening WhatsApp with your pre-filled enquiry. Thank you!", "success");
+      form.reset();
+    });
+  }
+
+  // Handle Send via Email (mailto)
+  if (sendEmailBtn) {
+    sendEmailBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const data = getFormData();
+      if (!validate(data)) return;
+
+      const recipient = (SITE_CONFIG.email && SITE_CONFIG.email.trim() !== "") 
+        ? SITE_CONFIG.email 
+        : "contact@natatechzo.com";
+
+      const subject = encodeURIComponent(`Project Enquiry: ${data.service} - ${data.name}`);
+      const body = encodeURIComponent(
+        `Hello NATA TECHZO Team,\n\n` +
+        `I would like to discuss a requirement with you.\n\n` +
+        `Name: ${data.name}\n` +
+        `Phone: ${data.phone || 'N/A'}\n` +
+        `Email: ${data.email || 'N/A'}\n` +
+        `Selected Service: ${data.service}\n\n` +
+        `Message:\n${data.message}\n\n` +
+        `Looking forward to hearing from you.`
+      );
+
+      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+      showAlert("Opening your email client with the details pre-filled. Thank you!", "success");
+      form.reset();
+    });
+  }
+
+  // Standard Form Submission fallback
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const data = getFormData();
+    if (!validate(data)) return;
+
+    // Default to WhatsApp if configured, else Email
+    if (SITE_CONFIG.whatsapp && SITE_CONFIG.whatsapp.trim() !== "") {
+      sendWhatsAppBtn.click();
+    } else {
+      sendEmailBtn.click();
+    }
+  });
+}
+
+/* --------------------------------------------------------------------------
+   8. BACK TO TOP BUTTON
+   -------------------------------------------------------------------------- */
 function initBackToTop() {
-  const btn = document.getElementById("backToTop");
+  const btn = document.getElementById("floating-back-to-top");
   if (!btn) return;
 
-  window.addEventListener(
-    "scroll",
-    () => btn.classList.toggle("visible", window.scrollY > 500),
-    { passive: true }
-  );
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      btn.classList.add("visible");
+    } else {
+      btn.classList.remove("visible");
+    }
+  }, { passive: true });
 
   btn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-}
-
-/* ---------------------------------------------------------
-   Contact form: validation + WhatsApp / mailto
---------------------------------------------------------- */
-function initContactForm() {
-  const form = document.getElementById("contactForm");
-  if (!form) return;
-
-  const whatsappBtn = document.getElementById("sendWhatsapp");
-  const emailBtn = document.getElementById("sendEmail");
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (validateForm()) sendViaWhatsapp();
-  });
-
-  emailBtn.addEventListener("click", () => {
-    if (validateForm()) sendViaEmail();
-  });
-
-  function validateForm() {
-    let valid = true;
-    const fields = [
-      { id: "name", test: (v) => v.trim().length >= 2, msg: "Please enter your name." },
-      { id: "email", test: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()), msg: "Please enter a valid email." },
-      { id: "phone", test: (v) => v.trim().length >= 7, msg: "Please enter a valid phone number." },
-      { id: "subject", test: (v) => v.trim().length > 0, msg: "Please select a subject." },
-      { id: "message", test: (v) => v.trim().length >= 10, msg: "Message should be at least 10 characters." }
-    ];
-
-    fields.forEach(({ id, test, msg }) => {
-      const input = document.getElementById(id);
-      const errorEl = document.getElementById(`err-${id}`);
-      const ok = test(input.value);
-      if (!ok) valid = false;
-      if (errorEl) errorEl.textContent = ok ? "" : msg;
-    });
-
-    if (!valid) showToast("Please check the highlighted fields.", "error");
-    return valid;
-  }
-
-  function getFormValues() {
-    return {
-      name: document.getElementById("name").value.trim(),
-      email: document.getElementById("email").value.trim(),
-      phone: document.getElementById("phone").value.trim(),
-      subject: document.getElementById("subject").value.trim(),
-      message: document.getElementById("message").value.trim()
-    };
-  }
-
-  function buildMessage(values) {
-    return [
-      "Hello Nata Techzo,",
-      "",
-      `Name: ${values.name}`,
-      `Email: ${values.email}`,
-      `Phone: ${values.phone}`,
-      `Requirement: ${values.subject}`,
-      `Message: ${values.message}`,
-      "",
-      "I would like to discuss this requirement."
-    ].join("\n");
-  }
-
-  function sendViaWhatsapp() {
-    if (isPlaceholder(SITE_CONFIG.whatsapp)) {
-      showToast("WhatsApp number not configured yet. Please set it in script.js.", "error");
-      return;
-    }
-    const message = buildMessage(getFormValues());
-    window.open(buildWhatsappLink(message), "_blank", "noopener,noreferrer");
-    showToast("Opening WhatsApp with your enquiry...");
-  }
-
-  function sendViaEmail() {
-    if (isPlaceholder(SITE_CONFIG.email)) {
-      showToast("Email address not configured yet. Please set it in script.js.", "error");
-      return;
-    }
-    const values = getFormValues();
-    const subject = encodeURIComponent(`Enquiry: ${values.subject}`);
-    const body = encodeURIComponent(buildMessage(values));
-    window.location.href = `mailto:${SITE_CONFIG.email}?subject=${subject}&body=${body}`;
-    showToast("Opening your email app...");
-  }
-}
-
-/* ---------------------------------------------------------
-   Toast notifications
---------------------------------------------------------- */
-function showToast(message, type = "success") {
-  const container = document.getElementById("toastContainer");
-  if (!container) return;
-
-  const toast = document.createElement("div");
-  toast.className = `toast${type === "error" ? " error" : ""}`;
-  toast.textContent = message;
-  container.appendChild(toast);
-
-  setTimeout(() => {
-    toast.style.opacity = "0";
-    toast.style.transform = "translateY(12px)";
-    setTimeout(() => toast.remove(), 250);
-  }, 3200);
 }
