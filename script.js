@@ -14,7 +14,7 @@ const SITE_CONFIG = {
   whatsapp: "919445603264",
 
   // Enter your phone number formatted for display (e.g. "+91 98765 43210")
-  phone: "+91 95973 61430",
+  phone: "+91 94456 03264",
 
   // Enter your contact email address (e.g. "contact@natatechzo.com")
   email: "natatechzo@gmail.com",
