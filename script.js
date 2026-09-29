@@ -11,7 +11,7 @@ const SITE_CONFIG = {
   tagline: "From Ideas to Digital Solutions.",
   
   // Enter your WhatsApp number in international format without '+' or spaces (e.g. "919876543210")
-  whatsapp: "919597361430",
+  whatsapp: "919445603264",
 
   // Enter your phone number formatted for display (e.g. "+91 98765 43210")
   phone: "+91 95973 61430",
@@ -24,9 +24,9 @@ const SITE_CONFIG = {
 
   // Social profile links (leave as "" if not active yet)
   socials: {
-    github: "",
-    whatsapp: "",
-    telegram: ""
+    github: "", // e.g. "https://github.com/yourusername"
+    whatsapp: "919445603264",
+    telegram: "919445603264"
   }
 };
 
@@ -107,8 +107,12 @@ function initSiteConfig() {
     footerWhatsapp.href = waNumber ? `https://wa.me/${waNumber}` : "#contact";
   }
 
-  if (footerTelegram && SITE_CONFIG.socials.telegram && SITE_CONFIG.socials.telegram.trim() !== "") {
-    footerTelegram.href = SITE_CONFIG.socials.telegram;
+  if (footerTelegram) {
+    const tg = SITE_CONFIG.socials.telegram ? SITE_CONFIG.socials.telegram.trim() : "";
+    if (tg !== "") {
+      // A plain phone number (no protocol/username) becomes a click-to-chat deep link.
+      footerTelegram.href = /^https?:\/\//i.test(tg) ? tg : `https://t.me/+${tg.replace(/\D/g, "")}`;
+    }
   }
 }
 

@@ -59,8 +59,9 @@ const SITE_CONFIG = {
   // Social profile links
   socials: {
     github: "https://github.com",
-    whatsapp: "919876543210",
-    telegram: "https://t.me/yourusername"
+    whatsapp: "919876543210",       // bare number → auto-converted to a wa.me link
+    telegram: "919876543210"        // bare number → auto-converted to a t.me click-to-chat link
+                                     // (or set a full URL like "https://t.me/yourusername" instead)
   }
 };
 ```
