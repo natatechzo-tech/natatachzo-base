@@ -11,16 +11,16 @@ const SITE_CONFIG = {
   tagline: "From Ideas to Digital Solutions.",
   
   // Enter your WhatsApp number in international format without '+' or spaces (e.g. "919876543210")
-  whatsapp: "", 
+  whatsapp: "919597361430",
 
   // Enter your phone number formatted for display (e.g. "+91 98765 43210")
-  phone: "",    
+  phone: "+91 95973 61430",
 
   // Enter your contact email address (e.g. "contact@natatechzo.com")
-  email: "",    
+  email: "natatechzo@gmail.com",
 
   // Enter your physical or operating location (e.g. "Tamil Nadu, India")
-  location: "", 
+  location: "Ponneri, Tamil Nadu, India",
 
   // Social profile links (leave as "" if not active yet)
   socials: {
