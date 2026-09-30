@@ -2189,6 +2189,49 @@ ul, ol {
 /* --------------------------------------------------------------------------
    21. RESPONSIVENESS & MEDIA QUERIES
    -------------------------------------------------------------------------- */
+
+/* Safety net: grid/flex items default to min-width:auto, which lets long
+   unbroken content (badges, headings, code blocks) force a track wider
+   than its column and silently overflow the viewport. Letting these
+   shrink below their content's natural width is what actually makes the
+   layout responsive instead of just resizing the grid definition. */
+.hero-content-wrapper > *,
+.about-grid > *,
+.contact-grid > *,
+.footer-top > *,
+.process-trio > *,
+.services-grid > *,
+.insurance-grid > *,
+.why-grid > *,
+.tech-wall > *,
+.testimonials-grid > *,
+.projects-grid-row > *,
+.workflow-track > *,
+.internship-cards-grid > *,
+.stages-trio > *,
+.project-categories-wall > * {
+  min-width: 0;
+}
+
+.hero-badge {
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.hero-badge span:not(.pulse-dot) {
+  min-width: 0;
+}
+
+.terminal-header > * {
+  min-width: 0;
+}
+
+.terminal-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 @media (max-width: 1100px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2369,9 +2412,33 @@ ul, ol {
   .footer-top {
     grid-template-columns: 1fr;
   }
+  .footer-brand {
+    grid-column: span 1;
+  }
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .floating-chip {
+    display: none;
+  }
+  .hero-interactive-card {
+    max-width: 100%;
+  }
+  .terminal-metrics {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 12px;
+  }
+  .stage-card,
+  .process-card,
+  .service-card,
+  .why-card,
+  .insurance-card,
+  .intern-card {
+    padding: 24px 20px;
   }
 }
 
